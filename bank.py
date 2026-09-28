@@ -1,0 +1,90 @@
+"""Question bank. Each question = (text, [keywords used for offline grading])."""
+
+LEVELS = {1: "Easy", 2: "Medium", 3: "Hard"}
+
+BANK = {
+    "Python": {
+        1: [("What is the difference between a list and a tuple in Python?",
+             ["mutable", "immutable", "hashable", "index", "memory"]),
+            ("How does a dictionary work and what is its average lookup complexity?",
+             ["hash", "key", "value", "o(1)", "collision"])],
+        2: [("What are decorators? How would you write one that logs execution time?",
+             ["wrapper", "function", "closure", "@", "functools", "args"]),
+            ("Explain generators and why they are memory-efficient.",
+             ["yield", "lazy", "iterator", "next", "memory"])],
+        3: [("Explain the GIL and its impact on multithreading in CPython.",
+             ["global interpreter lock", "thread", "cpu-bound", "multiprocessing", "i/o"]),
+            ("How does Python manage memory and garbage collection?",
+             ["reference count", "cycle", "generation", "garbage", "heap"])],
+    },
+    "Data Structures & Algorithms": {
+        1: [("Compare arrays and linked lists.",
+             ["contiguous", "pointer", "random access", "insertion", "o(1)"]),
+            ("Explain stack vs queue with real use cases.",
+             ["lifo", "fifo", "push", "pop", "enqueue"])],
+        2: [("How does a hash map handle collisions?",
+             ["chaining", "open addressing", "load factor", "resize", "hash"]),
+            ("Compare BFS and DFS. When would you use each?",
+             ["queue", "stack", "shortest path", "visited", "recursion"])],
+        3: [("What is dynamic programming and how do you recognise a DP problem?",
+             ["overlapping", "optimal substructure", "memoization", "tabulation", "state"]),
+            ("How does Dijkstra's algorithm work? What is its complexity?",
+             ["priority queue", "heap", "relax", "non-negative", "log"])],
+    },
+    "Web Development": {
+        1: [("What roles do HTML, CSS and JavaScript play in a web page?",
+             ["structure", "style", "behavior", "dom", "browser"]),
+            ("What is a REST API? List common HTTP methods and status codes.",
+             ["get", "post", "put", "delete", "stateless", "status"])],
+        2: [("Explain the JavaScript event loop, promises and async/await.",
+             ["call stack", "queue", "microtask", "promise", "async", "non-blocking"]),
+            ("How do JWT and session-based authentication differ?",
+             ["token", "stateless", "cookie", "server", "signature", "expire"])],
+        3: [("How would you scale a web app to serve one million users?",
+             ["load balancer", "cache", "cdn", "database", "horizontal", "replication"]),
+            ("Explain XSS, CSRF and CORS and how to defend against each.",
+             ["origin", "token", "sanitize", "escape", "samesite", "csp"])],
+    },
+    "Data Science & ML": {
+        1: [("Explain supervised vs unsupervised learning with examples.",
+             ["label", "classification", "regression", "clustering", "unlabeled"]),
+            ("What is overfitting and how can you prevent it?",
+             ["training", "generalization", "regularization", "cross-validation", "dropout"])],
+        2: [("Explain precision, recall and F1. When would you prioritise recall?",
+             ["false positive", "false negative", "imbalance", "trade-off", "threshold"]),
+            ("Explain the bias-variance tradeoff.",
+             ["underfit", "overfit", "complexity", "variance", "error"])],
+        3: [("How does gradient descent work? Compare its main variants.",
+             ["gradient", "learning rate", "loss", "batch", "stochastic", "momentum"]),
+            ("Why does a random forest generalise better than one decision tree?",
+             ["bootstrap", "ensemble", "bagging", "average", "feature", "variance"])],
+    },
+    "SQL & DBMS": {
+        1: [("Difference between primary key and foreign key?",
+             ["unique", "null", "reference", "integrity", "table"]),
+            ("Explain INNER JOIN vs LEFT JOIN.",
+             ["matching", "all rows", "null", "left table", "condition"])],
+        2: [("Explain the ACID properties.",
+             ["atomicity", "consistency", "isolation", "durability", "transaction"]),
+            ("What is an index? What are its trade-offs?",
+             ["b-tree", "read", "write", "storage", "lookup", "faster"])],
+        3: [("Explain transaction isolation levels and the anomalies they prevent.",
+             ["dirty read", "non-repeatable", "phantom", "serializable", "read committed"]),
+            ("Normalization vs denormalization: when would you denormalize?",
+             ["redundancy", "join", "3nf", "read performance", "anomaly"])],
+    },
+}
+
+# STAR-style keywords work for all HR answers
+HR_KEYWORDS = ["situation", "task", "action", "result", "team", "learned", "challenge", "outcome"]
+
+HR_QUESTIONS = [
+    "Tell me about yourself.",
+    "Describe a time you faced a difficult challenge and how you handled it.",
+    "Tell me about a conflict with a teammate and how you resolved it.",
+    "What is your biggest weakness, and what are you doing about it?",
+    "Describe a project you are proud of. What was your role?",
+    "Tell me about a time you failed. What did you learn?",
+    "Why do you want to join this company or role?",
+    "Where do you see yourself in five years?",
+]
